@@ -1,0 +1,45 @@
+
+##
+## Setting PS1 with Git Branch
+##
+
+parse_git_branch() {
+  LOCAL=$(git rev-parse @ 2> /dev/null)
+  REMOTE=$(git rev-parse ${1:-'@{u}'} 2> /dev/null)
+  BASE=$(git merge-base @ ${1:-'@{u}'} 2> /dev/null)
+
+  arrow=""
+  if [ ! -z "$LOCAL" ] && [ ! -z "$REMOTE" ] && [ ! -z "$BASE" ];  then
+    if [ $LOCAL = $REMOTE ]; then
+      # no changes
+      arrow="✓"
+    elif [ $LOCAL = $BASE ]; then
+      # need to pull
+      arrow="↓"
+    elif [ $REMOTE = $BASE ]; then
+      # need to push
+      arrow="↑"
+    else
+      # most of the time, pull & push needed
+      # rarely an error with git project
+      arrow="↑↓"
+    fi
+  fi
+
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$arrow)/"
+}
+
+# Prompt colours
+# weitere Farben http://misc.flogisoft.com/_media/bash/colors_format/256_colors_fg.png
+export arrow1C="\[\e[38;5;236m\]"
+export arrow2C="\[\e[38;5;241m\]"
+export arrow3C="\[\e[38;5;247m\]"
+export panC="\[\e[38;5;37m\]"
+export pipeC="\[\e[38;5;241m\]"
+export userC="\[\e[38;5;37m\]"
+export folderC="\[\e[38;5;241m\]"
+export gitC="\[\033[01;33m\]"
+export dollarC="\[\033[01;33m\]"
+export normalC="\[\033[00m\]"
+
+export PS1="${arrow1C}> ${arrow2C}> ${arrow3C}>${panC} PAN ${pipeC}|${userC} \u ${folderC}\w${gitC} \$(parse_git_branch) \n${dollarC}\$ ${normalC}"
