@@ -3,6 +3,40 @@
 # --- FUNCTIONS ---
 # -----------------
 
+# hard reset git repo
+function rr() {
+    git branch | grep -q "main"
+
+    if [ $? -eq 0 ]; then
+        GitSource="main"
+    else
+        GitSource="master"
+    fi
+
+    COL1='\e[38;5;215m'
+    COL2='\e[38;5;223m'
+    CLEARCOL='\e[38;5;240m'
+
+    echo -e "${COL1}# - - - - - - - - - - - - - - - -${CLEARCOL}"
+    echo -e "${COL1}# - GIT CLEANUP : FETCH & RESET -${CLEARCOL}"
+    echo -e "${COL1}# - - - - - - - - - - - - - - - -${CLEARCOL}"
+    echo
+
+    echo -e "${COL1}# fetch data from origin${CLEARCOL}"
+    echo -e "${COL2}$ git fetch origin${CLEARCOL}"
+    git fetch origin
+    echo
+
+    echo -e "${COL1}# do a hard reset${CLEARCOL}"
+    echo -e "${COL2}$ git reset --hard origin/$GitSource${CLEARCOL}"
+    git reset --hard origin/$GitSource
+    echo
+
+    echo -e "${COL1}# pull current data${CLEARCOL}"
+    echo -e "${COL2}$ git pull${CLEARCOL}"
+    git pull
+}
+
 # Change directory & list files
 function cl {
   DIR="$*";
