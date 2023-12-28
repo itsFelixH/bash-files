@@ -1,7 +1,7 @@
 
-##
-## ALIASES
-##
+# ---------------
+# --- ALIASES ---
+# ---------------
 
 # ls and variants
 alias ls='ls -vph --color=auto --group-directories-first --time-style="+%F, %T  "'
@@ -124,6 +124,9 @@ alias status='git status'
 alias clone='git clone'
 # Delete all local branches which have been merged
 alias removemerged='git for-each-ref --format "%(refname:short)" refs/heads | grep -v "master\|main" | xargs git branch -D'
+# folders
+alias gitfolder='cd ~/git'
+alias gitprojects='cd ~/git'
 
 # reload shell
 alias reload="source ~/.bashrc && echo 'bashrc reloaded...'"

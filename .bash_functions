@@ -1,7 +1,7 @@
 
-##
-## FUNCTIONS
-##
+# -----------------
+# --- FUNCTIONS ---
+# -----------------
 
 # Change directory & list files
 function cl {
