@@ -2,6 +2,8 @@
 
 .bashrc, bash aliases, bash functions, ...
 
+## Basics
+
 The script `configure-bash.sh` creates some bash aliases and functions that might be helpful. The various files are sourced into your `~/.bashrc`:
 
 ```bash
@@ -10,7 +12,7 @@ source ~/bash-files/.bah_functions
 source ~/bash-files/.bash_config
 ```
 
-Additional aliases or functions can be added to these files.
+Additional aliases or functions can be added to these files. Feel free to ask me questions via Discord or make suggestions on what I need to add here.
 
 ## Usage
 
@@ -49,3 +51,7 @@ HEAD is now at 6a1a642 fixing typos
 $ git pull
 Already up to date.
 ```
+
+## Thanks
+
+If you wish to say thanks, you can [buy me a coffee](https://ko-fi.com/cptneptun) or text me on Discord (`CptNeptun#9041`).
