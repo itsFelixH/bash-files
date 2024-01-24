@@ -95,3 +95,56 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
+
+
+# -----------------
+# --- Pre Check ---
+# -----------------
+
+# basic stuff on local Linux AWS WorkSpace
+# echo "---------------------------------------------------"
+# echo "Terminal pre-check: output active versions:"
+
+# python_version=$(python -V 2>&1)
+# if [[ -z "$python_version" ]]; then
+#   echo "WARN: Python missing in this terminal  o_o"
+# else
+#   echo "Python:   ${python_version#* }"
+# fi
+
+# pip_version=$(pip --version 2>&1)
+# if [[ -z "$pip_version" ]]; then
+#   echo "WARN: pip missing in this terminal  o_o"
+# else
+#   echo "pip:      $(echo $pip_version | cut -d' ' -f2)"
+# fi
+
+# boto3_version=$(pip show boto3 2>&1 | sed -n 2p)
+# if [[ -z "$boto3_version" ]]; then
+#   echo "WARN: boto3 missing in this terminal  o_o"
+# else
+#   echo "boto3:    $(echo $boto3_version | cut -d' ' -f2)"
+# fi
+
+# aws_version=$(aws --version 2>&1)
+# if [[ -z "$aws_version" ]]; then
+#   echo "WARN: AWS CLI missing in this terminal  o_o"
+# else
+#   echo "AWS CLI:  $(echo ${aws_version%% *} | cut -d'/' -f2)"
+# fi
+
+# node_version=$(node -v 2>&1)
+# if [[ -z "$node_version" ]]; then
+#   echo "WARN: Node.js missing in this terminal  o_o" 
+# else
+#   echo "Node.js:  $node_version"
+# fi
+
+# cdk_version=$(cdk --version 2>&1)
+# if [[ -z "$cdk_version" ]]; then
+#   echo "WARN: CDK missing in this terminal  o_o" 
+# else
+#   echo "CDK:      ${cdk_version%% *}"
+# fi
+# echo "Now ready to go with this terminal."
+# echo "---------------------------------------------------"
