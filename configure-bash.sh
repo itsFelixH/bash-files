@@ -12,7 +12,7 @@ NC='\033[0m' # No Color
 
 scriptPath=$(pwd)
 
-echo -e "${ORANGE}\nSetup bash aliases & functions${NC}"
+echo -e "${ORANGE}\nConfiguring ~/.bashrc${NC}"
 
 bashFilesFolder="$HOME/.bash-files"
 echo -e "${ORANGE}\nCopy bash files to $bashFilesFolder/...${NC}"
