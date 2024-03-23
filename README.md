@@ -17,41 +17,17 @@ Additional aliases or functions can be added to these files. Feel free to ask me
 ## Usage
 
 Clone repo:
-```
+
+``` bash
 git clone https://github.com/itsFelixH/bash-files
 ```
 
 Run in bash shell:
-```
+
+``` bash
 ./bash-files/configure-bash.sh
-```
-
-## Functions
-
-### rr-function
-
-In the file `.bash_functions` you'll find the rr function. This function allows you to reset the current repository and revert to the Main/Master using the alias "rr" (reset repo).
-
-*Example Output:*
-
-```shell
-$ rr
-# - - - - - - - - - - - - - - - -
-# - GIT CLEANUP: FETCH & RESET -
-# - - - - - - - - - - - - - - - -
-
-# fetch data from origin
-$ git fetch origin
-
-# do a hard reset
-$ git reset --hard origin/master
-HEAD is now at 6a1a642 fixing typos
-
-# pull current data
-$ git pull
-Already up to date.
 ```
 
 ## Thanks
 
-If you wish to say thanks, you can [buy me a coffee](https://ko-fi.com/cptneptun) or text me on Discord (`CptNeptun#9041`).
+If you wish to say thanks, you can text me on Discord (`CptNeptun#9041`).
